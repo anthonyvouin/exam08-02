@@ -34,6 +34,7 @@
     <button v-on:click="changePage(3)" v-bind:class="{ selected: ActuelPage === 3 }" class="singleButton">3</button>
     <button v-on:click="changePage(4)" v-bind:class="{ selected: ActuelPage === 4 }" class="singleButton">4</button>
     <button v-on:click="changePage(5)" v-bind:class="{ selected: ActuelPage === 5 }" class="singleButton">5</button>
+    
   </div>
 </template>
 
@@ -57,6 +58,7 @@ export default {
     isInBag(TShirt) {
       return this.TShirtsInBag.find(item => item.id == TShirt.id)
     },
+    
     
    
   }, 
