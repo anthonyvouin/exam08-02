@@ -5,7 +5,7 @@
       <div v-for="(TShirt, index) in TShirtsInBag" :key="index" class="item">
         <div class="remove" @click="this.$store.dispatch('removeFromBag',TShirt.id)">Supprimer le produit</div>
         <div class="photo">
-          <p>{{TShirt.flag}}</p>
+          <p>{{TShirt.name}}</p>
 
 
            <img :src="TShirt.imageURL">
@@ -18,7 +18,6 @@
             <span class="amount">US $ {{ TShirt.price }}</span>
         </div>
       </div>
-      <div class="grand-total"> Grand Total</div>
 
     </div>
   </div>
@@ -68,24 +67,7 @@ export default {
         cursor: pointer;
       }
 
-      .quantity-area {
-        margin: 8px auto;
-        height: 14px;
-
-        button {
-          width: 16px;
-          height: 16px;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-        }
-
-        .quantity {
-
-            margin: 0 4px;
-        }
-      }
+      
 
       .photo {
         img {
@@ -109,12 +91,7 @@ export default {
         }
       }
     }
-      .grand-total {
-          font-size: 24px;
-          font-weight: bold;
-          text-align: right;
-          margin-top: 8px;
-      }
+      
 
   }
 
