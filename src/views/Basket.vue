@@ -15,7 +15,7 @@
          </div>
         <div class="price">
           
-            <span class="amount">US$ {{ TShirt.price }}</span>
+            <span class="amount">US $ {{ TShirt.price }}</span>
         </div>
       </div>
       <div class="grand-total"> Grand Total</div>
