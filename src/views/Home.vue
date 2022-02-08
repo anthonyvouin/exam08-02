@@ -5,12 +5,12 @@
       <div 
       v-for = "(TShirt, index) in this.TShirts" :key="index"
       class="product"
-      :class="{ inBag : isInBag(TShirt) }">
+      :class="{ inBag : isInBag(TShirt) }"
+      >
 
-        <div class="product-image" :style="{backgroundImage: 'url(' + TShirt.imageURL + ')'}">
-          
-        </div>
-        <p >{{TShirt.flag}}</p>
+      <div class="product-image" :style="{backgroundImage: 'url(' + TShirt.imageURL + ')'}">
+      </div>
+        <p v-if='TShirt.flag != ""' class="flag" v-bind:class="{ red: TShirt.flag == 'NEW', blue:TShirt.flag=='Sale!'}">{{TShirt.flag}}</p>
 
 
         
@@ -71,6 +71,29 @@ export default {
 <style lang="scss">
 
   .home {
+    .red{
+    padding: 10px;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    color: white;
+    background-color: rgb(255, 102, 0);
+    text-align: center;
+    margin-top: -180px;
+  }
+
+.blue{
+    padding: 10px;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    color: white;
+    background-color: rgb(0, 255, 234);
+    text-align: center;
+    margin-top: -180px;
+
+  }
+
 
     .products {
       display: flex;
